@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aerotech Field Sales Dashboard - William Yeh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8fafc;
+    }
+
+    .dashboard {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .header h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard">
+  <div class="header">
+    <h1>Aerotech Field Sales Dashboard</h1>
+    <h2>William Yeh</h2>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Total NOR</h3>
+      <p>Total Net Order Received</p>
+    </div>
+    <div class="card">
+      <h3>NOR: New Business</h3>
+      <p>Including New Logo / New Project</p>
+    </div>
+    <div class="card">
+      <h3>New Logo Number</h3>
+      <p>Number of total new Logo business Closed Won</p>
+    </div>
+    <div class="card">
+      <h3>Sales Process</h3>
+      <p>Conduct sales process – Defined by weekly scoring sheet used during weekly coaching calls.</p>
+    </div>
+
+    <div class="card">
+      <h3>New Opp Number</h3>
+      <p>Number of total new opportunities generated for New Business</p>
+    </div>
+    <div class="card">
+      <h3>New Opp Amount</h3>
+      <p>Amount ($) of total new opportunities generated for New Business</p>
+    </div>
+    <div class="card">
+      <h3>QBR SMART Goals</h3>
+      <p>Tracking of QBR Smart goals / action – Defined by SMART goals measurable output.</p>
+    </div>
+    <div class="card">
+      <h3>ANI Goal</h3>
+      <p>Tracking & achieving Ani’s Yearly Goals – Defined by Ani’s FY25 goal sheet.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
