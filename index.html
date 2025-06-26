@@ -6,74 +6,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f8fafc;
       margin: 0;
       padding: 20px;
-      background-color: #f8fafc;
     }
 
     .dashboard {
-      max-width: 1200px;
+      max-width: 1600px;
       margin: auto;
-    }
-
-    .header {
       text-align: center;
-      margin-bottom: 40px;
     }
 
-    .header h1 {
-      font-size: 2rem;
+    .title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .table-row {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 1px;
+      background-color: #ccc;
+    }
+
+    .cell {
+      background-color: white;
+      padding: 15px 10px;
+      border: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 140px;
+    }
+
+    .cell h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0 0 8px;
+      color: #111;
+    }
+
+    .cell p {
+      font-size: 0.9rem;
+      color: #333;
       margin: 0;
     }
 
-    .header h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #666;
-      margin-top: 6px;
+    @media (max-width: 1200px) {
+      .table-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #1f2937;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #475569;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 900px) {
-      .grid {
+    @media (max-width: 768px) {
+      .table-row {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 600px) {
-      .grid {
+    @media (max-width: 500px) {
+      .table-row {
         grid-template-columns: 1fr;
       }
     }
@@ -82,42 +84,39 @@
 <body>
 
 <div class="dashboard">
-  <div class="header">
-    <h1>Aerotech Field Sales Dashboard</h1>
-    <h2>William Yeh</h2>
-  </div>
+  <div class="title">Aerotech Field Sales Dashboard</div>
+  <div class="subtitle">William Yeh</div>
 
-  <div class="grid">
-    <div class="card">
+  <div class="table-row">
+    <div class="cell">
       <h3>Total NOR</h3>
       <p>Total Net Order Received</p>
     </div>
-    <div class="card">
+    <div class="cell">
       <h3>NOR: New Business</h3>
-      <p>Including New Logo / New Project</p>
+      <p>Including New Logo/New Project</p>
     </div>
-    <div class="card">
+    <div class="cell">
       <h3>New Logo Number</h3>
       <p>Number of total new Logo business Closed Won</p>
     </div>
-    <div class="card">
+    <div class="cell">
       <h3>Sales Process</h3>
       <p>Conduct sales process – Defined by weekly scoring sheet used during weekly coaching calls.</p>
     </div>
-
-    <div class="card">
+    <div class="cell">
       <h3>New Opp Number</h3>
       <p>Number of total new opportunities generated for New Business</p>
     </div>
-    <div class="card">
+    <div class="cell">
       <h3>New Opp Amount</h3>
       <p>Amount ($) of total new opportunities generated for New Business</p>
     </div>
-    <div class="card">
+    <div class="cell">
       <h3>QBR SMART Goals</h3>
       <p>Tracking of QBR Smart goals / action – Defined by SMART goals measurable output.</p>
     </div>
-    <div class="card">
+    <div class="cell">
       <h3>ANI Goal</h3>
       <p>Tracking & achieving Ani’s Yearly Goals – Defined by Ani’s FY25 goal sheet.</p>
     </div>
