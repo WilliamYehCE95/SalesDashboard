@@ -22,7 +22,7 @@
 <body class="bg-gray-50 p-4 sm:p-8 md:p-10 lg:p-12 antialiased">
     <!--
     Main container for the dashboard.
-    - Removed `max-w-7xl` to allow the dashboard to expand more on very large screens.
+    - `max-w-screen-2xl`: Limits the maximum width for very large screens to prevent boxes from becoming excessively wide.
     - `mx-auto`: Centers the block horizontally.
     - `text-center`: Centers all inline content within this div.
     - `py-8 px-4`: Adds vertical and horizontal padding.
@@ -30,7 +30,7 @@
     - `shadow-2xl`: Adds a significant shadow for depth and visual separation from the background.
     - `bg-white`: Sets the background of the dashboard itself to white.
     -->
-    <div class="dashboard w-full mx-auto text-center py-8 px-4 sm:px-6 lg:px-8 bg-white rounded-xl shadow-2xl">
+    <div class="dashboard max-w-screen-2xl mx-auto text-center py-8 px-4 sm:px-6 lg:px-8 bg-white rounded-xl shadow-2xl">
         <!--
         Main title of the dashboard.
         - `text-4xl`: Large text size for emphasis.
@@ -57,12 +57,12 @@
         - `grid`: Enables CSS Grid layout.
         - `grid-cols-1`: Default to 1 column on smallest screens (mobile-first).
         - `sm:grid-cols-2`: 2 columns on small screens (640px and up).
-        - `md:grid-cols-3`: **Changed to 3 columns on medium screens (was 4).**
-        - `lg:grid-cols-4`: **Changed to 4 columns on large screens (was 8).** This significantly widens the boxes.
-        - `xl:grid-cols-6`: **Added new breakpoint for extra-large screens to show 6 columns.**
-        - `gap-6`: Increased the gap between grid items for better visual separation.
+        - `md:grid-cols-4`: **Reverted to 4 columns on medium screens (768px and up) for narrower boxes.**
+        - `lg:grid-cols-6`: **Set to 6 columns on large screens (1024px and up) for significantly narrower boxes.**
+        - `xl:grid-cols-8`: **Set to 8 columns on extra-large screens (1280px and up) to fit even more cards.**
+        - `gap-4`: Reduced the gap between grid items slightly.
         -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
             <!--
             Individual dashboard cell component.
             Each cell is designed with consistent styling for a clean, modular look.
@@ -71,9 +71,9 @@
             - `shadow-md`: Adds a subtle shadow for a card-like effect.
             - `border border-blue-200`: A light blue border to define the cell boundaries.
             - `hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out`: Adds interactive hover effects for better user engagement.
-            - `min-h-[160px]`: Slightly increased min-height for better proportion with wider boxes.
+            - `min-h-[140px]`: Adjusted min-height for better proportion with narrower boxes.
             -->
-            <div class="cell bg-blue-50 rounded-lg shadow-md border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out min-h-[160px]">
+            <div class="cell bg-blue-50 rounded-lg shadow-md border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out min-h-[140px]">
                 <!--
                 Wrapping the content in an <a> tag to make the entire cell clickable.
                 - `href`: The target URL for the link.
@@ -87,44 +87,51 @@
                    target="_blank"
                    rel="noopener noreferrer"
                    class="block w-full h-full flex flex-col items-center justify-center p-6 text-current no-underline">
-                    <!-- Heading for the metric. -->
+                    <!-- Heading for the metric. Translated to Traditional Chinese from the image. -->
                     <h3 class="text-lg font-semibold text-gray-800 mb-2">Total NOR</h3>
-                    <!-- Description of the metric. -->
+                    <!-- Description of the metric. Translated to Traditional Chinese from the image. -->
                     <p class="text-sm text-gray-600">訂單金額</p>
                 </a>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Translated to Traditional Chinese from the image. -->
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">NOR: New Business</h3>
                 <p class="text-sm text-gray-600">新客戶/專案成交金額</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Translated to Traditional Chinese from the image. -->
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">New Logo Number</h3>
                 <p class="text-sm text-gray-600">新客戶成交數量</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Translated to Traditional Chinese from the image. -->
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Sales Process</h3>
-                <p class="text-sm text-gray-600">業務流程</p>
+                <p class="text-sm text-gray-600">銷售流程</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
-                <h3 class="text-lg font-semibold text-gray-800 mb-2">New Deal Number</h3>
-                <p class="text-sm text-gray-600">新開案數量</p>
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Translated to Traditional Chinese from the image. -->
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">New Opp Number</h3>
+                <p class="text-sm text-gray-600">新開發數量</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Translated to Traditional Chinese from the image. -->
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">New Opp Amount</h3>
-                <p class="text-sm text-gray-600">新開案金額</p>
+                <p class="text-sm text-gray-600">新開發金額</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Translated to Traditional Chinese from the image. -->
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">QBR SMART Goals</h3>
                 <p class="text-sm text-gray-600">QBR目標</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Translated to Traditional Chinese from the image. -->
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">ANI Goal</h3>
                 <p class="text-sm text-gray-600">代理商目標</p>
             </div>
