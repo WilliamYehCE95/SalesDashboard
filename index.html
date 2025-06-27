@@ -22,7 +22,7 @@
 <body class="bg-gray-50 p-4 sm:p-8 md:p-10 lg:p-12 antialiased">
     <!--
     Main container for the dashboard.
-    - `max-w-7xl`: Limits the maximum width for larger screens for better readability.
+    - Removed `max-w-7xl` to allow the dashboard to expand more on very large screens.
     - `mx-auto`: Centers the block horizontally.
     - `text-center`: Centers all inline content within this div.
     - `py-8 px-4`: Adds vertical and horizontal padding.
@@ -30,7 +30,7 @@
     - `shadow-2xl`: Adds a significant shadow for depth and visual separation from the background.
     - `bg-white`: Sets the background of the dashboard itself to white.
     -->
-    <div class="dashboard max-w-7xl mx-auto text-center py-8 px-4 sm:px-6 lg:px-8 bg-white rounded-xl shadow-2xl">
+    <div class="dashboard w-full mx-auto text-center py-8 px-4 sm:px-6 lg:px-8 bg-white rounded-xl shadow-2xl">
         <!--
         Main title of the dashboard.
         - `text-4xl`: Large text size for emphasis.
@@ -57,24 +57,23 @@
         - `grid`: Enables CSS Grid layout.
         - `grid-cols-1`: Default to 1 column on smallest screens (mobile-first).
         - `sm:grid-cols-2`: 2 columns on small screens (640px and up).
-        - `md:grid-cols-4`: 4 columns on medium screens (768px and up).
-        - `lg:grid-cols-8`: 8 columns on large screens (1024px and up), replicating the original design.
-        - `gap-4`: Adds a consistent gap between grid items.
+        - `md:grid-cols-3`: **Changed to 3 columns on medium screens (was 4).**
+        - `lg:grid-cols-4`: **Changed to 4 columns on large screens (was 8).** This significantly widens the boxes.
+        - `xl:grid-cols-6`: **Added new breakpoint for extra-large screens to show 6 columns.**
+        - `gap-6`: Increased the gap between grid items for better visual separation.
         -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
             <!--
             Individual dashboard cell component.
             Each cell is designed with consistent styling for a clean, modular look.
             - `bg-blue-50`: Very light blue background, provides a subtle highlight.
-            - `p-6`: Generous padding inside the cell.
             - `rounded-lg`: Standard rounded corners for individual cells.
             - `shadow-md`: Adds a subtle shadow for a card-like effect.
-            - `flex flex-col items-center justify-center`: Uses flexbox to center content vertically and horizontally.
-            - `min-h-[140px]`: Ensures a minimum height for consistent cell sizing, even with less content.
             - `border border-blue-200`: A light blue border to define the cell boundaries.
             - `hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out`: Adds interactive hover effects for better user engagement.
+            - `min-h-[160px]`: Slightly increased min-height for better proportion with wider boxes.
             -->
-            <div class="cell bg-blue-50 rounded-lg shadow-md border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out min-h-[140px]">
+            <div class="cell bg-blue-50 rounded-lg shadow-md border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out min-h-[160px]">
                 <!--
                 Wrapping the content in an <a> tag to make the entire cell clickable.
                 - `href`: The target URL for the link.
@@ -95,37 +94,37 @@
                 </a>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">NOR: New Business</h3>
                 <p class="text-sm text-gray-600">Including New Logo/New Project</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">New Logo Number</h3>
                 <p class="text-sm text-gray-600">Number of total new Logo business Closed Won</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Sales Process</h3>
                 <p class="text-sm text-gray-600">Conduct sales process – Defined by weekly scoring sheet used during weekly coaching calls.</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">New Opp Number</h3>
                 <p class="text-sm text-gray-600">Number of total new opportunities generated for New Business</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">New Opp Amount</h3>
                 <p class="text-sm text-gray-600">Amount ($) of total new opportunities generated for New Business</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">QBR SMART Goals</h3>
                 <p class="text-sm text-gray-600">Tracking of QBR Smart goals / action – Defined by SMART goals measurable output.</p>
             </div>
 
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[160px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">ANI Goal</h3>
                 <p class="text-sm text-gray-600">Tracking & achieving Ani’s Yearly Goals – Defined by Ani’s FY25 goal sheet.</p>
             </div>
