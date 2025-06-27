@@ -74,11 +74,25 @@
             - `border border-blue-200`: A light blue border to define the cell boundaries.
             - `hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out`: Adds interactive hover effects for better user engagement.
             -->
-            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
-                <!-- Heading for the metric. -->
-                <h3 class="text-lg font-semibold text-gray-800 mb-2">Total NOR</h3>
-                <!-- Description of the metric. -->
-                <p class="text-sm text-gray-600">Total Net Order Received</p>
+            <div class="cell bg-blue-50 rounded-lg shadow-md border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out min-h-[140px]">
+                <!--
+                Wrapping the content in an <a> tag to make the entire cell clickable.
+                - `href`: The target URL for the link.
+                - `target="_blank"`: Opens the link in a new browser tab.
+                - `rel="noopener noreferrer"`: Security best practice when using `target="_blank"` to prevent reverse tabnabbing.
+                - `block w-full h-full flex flex-col items-center justify-center p-6 text-current no-underline`:
+                  Makes the anchor tag a block-level element that fills the entire cell,
+                  centers its content, maintains text color, and removes default underline.
+                -->
+                <a href="https://prod-useast-b.online.tableau.com/t/aerotech/views/SalesMetricsBETA/SalesMetricsSummary/efb22f54-9c8b-41bb-b205-b2ded198de7f/04ae7725-ffe6-4588-b953-d5ad6723a24b"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block w-full h-full flex flex-col items-center justify-center p-6 text-current no-underline">
+                    <!-- Heading for the metric. -->
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Total NOR</h3>
+                    <!-- Description of the metric. -->
+                    <p class="text-sm text-gray-600">Total Net Order Received</p>
+                </a>
             </div>
 
             <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
