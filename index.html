@@ -1,127 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Aerotech Field Sales Dashboard - William Yeh</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8fafc;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .dashboard {
-      max-width: 1600px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .table-row {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 1px;
-      background-color: #ccc;
-    }
-
-    .cell {
-      background-color: white;
-      padding: 15px 10px;
-      border: 1px solid #ccc;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 140px;
-    }
-
-    .cell h3 {
-      font-size: 1rem;
-      font-weight: bold;
-      margin: 0 0 8px;
-      color: #111;
-    }
-
-    .cell p {
-      font-size: 0.9rem;
-      color: #333;
-      margin: 0;
-    }
-
-    @media (max-width: 1200px) {
-      .table-row {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .table-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 500px) {
-      .table-row {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerotech Field Sales Dashboard - William Yeh</title>
+    <!--
+    Tailwind CSS CDN for utility-first styling.
+    This provides all the necessary classes for responsive design and modern aesthetics.
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /*
+        Custom CSS to ensure the Inter font is used throughout the document.
+        Tailwind's default font stack can be overridden or extended, but this ensures consistency.
+        */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 p-4 sm:p-8 md:p-10 lg:p-12 antialiased">
+    <!--
+    Main container for the dashboard.
+    - `max-w-7xl`: Limits the maximum width for larger screens for better readability.
+    - `mx-auto`: Centers the block horizontally.
+    - `text-center`: Centers all inline content within this div.
+    - `py-8 px-4`: Adds vertical and horizontal padding.
+    - `rounded-xl`: Applies large rounded corners to the entire dashboard container for a softer look.
+    - `shadow-2xl`: Adds a significant shadow for depth and visual separation from the background.
+    - `bg-white`: Sets the background of the dashboard itself to white.
+    -->
+    <div class="dashboard max-w-7xl mx-auto text-center py-8 px-4 sm:px-6 lg:px-8 bg-white rounded-xl shadow-2xl">
+        <!--
+        Main title of the dashboard.
+        - `text-4xl`: Large text size for emphasis.
+        - `font-extrabold`: Extra bold font weight.
+        - `text-gray-900`: Dark grey text color for strong contrast.
+        - `mb-2`: Margin-bottom for spacing below the title.
+        -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-2 leading-tight">
+            Aerotech Field Sales Dashboard
+        </h1>
+        <!--
+        Subtitle, indicating the owner or specific context.
+        - `text-xl`: Medium text size.
+        - `font-medium`: Medium font weight.
+        - `text-gray-600`: Slightly lighter grey text for a subtle appearance.
+        - `mb-10`: Larger margin-bottom to separate the header from the main content grid.
+        -->
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-600 mb-10">
+            William Yeh
+        </h2>
 
-<div class="dashboard">
-  <div class="title">Aerotech Field Sales Dashboard</div>
-  <div class="subtitle">William Yeh</div>
+        <!--
+        Grid container for the dashboard metrics.
+        - `grid`: Enables CSS Grid layout.
+        - `grid-cols-1`: Default to 1 column on smallest screens (mobile-first).
+        - `sm:grid-cols-2`: 2 columns on small screens (640px and up).
+        - `md:grid-cols-4`: 4 columns on medium screens (768px and up).
+        - `lg:grid-cols-8`: 8 columns on large screens (1024px and up), replicating the original design.
+        - `gap-4`: Adds a consistent gap between grid items.
+        -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            <!--
+            Individual dashboard cell component.
+            Each cell is designed with consistent styling for a clean, modular look.
+            - `bg-blue-50`: Very light blue background, provides a subtle highlight.
+            - `p-6`: Generous padding inside the cell.
+            - `rounded-lg`: Standard rounded corners for individual cells.
+            - `shadow-md`: Adds a subtle shadow for a card-like effect.
+            - `flex flex-col items-center justify-center`: Uses flexbox to center content vertically and horizontally.
+            - `min-h-[140px]`: Ensures a minimum height for consistent cell sizing, even with less content.
+            - `border border-blue-200`: A light blue border to define the cell boundaries.
+            - `hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out`: Adds interactive hover effects for better user engagement.
+            -->
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <!-- Heading for the metric. -->
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Total NOR</h3>
+                <!-- Description of the metric. -->
+                <p class="text-sm text-gray-600">Total Net Order Received</p>
+            </div>
 
-  <div class="table-row">
-    <div class="cell">
-      <h3>Total NOR</h3>
-      <p>Total Net Order Received</p>
-    </div>
-    <div class="cell">
-      <h3>NOR: New Business</h3>
-      <p>Including New Logo/New Project</p>
-    </div>
-    <div class="cell">
-      <h3>New Logo Number</h3>
-      <p>Number of total new Logo business Closed Won</p>
-    </div>
-    <div class="cell">
-      <h3>Sales Process</h3>
-      <p>Conduct sales process – Defined by weekly scoring sheet used during weekly coaching calls.</p>
-    </div>
-    <div class="cell">
-      <h3>New Opp Number</h3>
-      <p>Number of total new opportunities generated for New Business</p>
-    </div>
-    <div class="cell">
-      <h3>New Opp Amount</h3>
-      <p>Amount ($) of total new opportunities generated for New Business</p>
-    </div>
-    <div class="cell">
-      <h3>QBR SMART Goals</h3>
-      <p>Tracking of QBR Smart goals / action – Defined by SMART goals measurable output.</p>
-    </div>
-    <div class="cell">
-      <h3>ANI Goal</h3>
-      <p>Tracking & achieving Ani’s Yearly Goals – Defined by Ani’s FY25 goal sheet.</p>
-    </div>
-  </div>
-</div>
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">NOR: New Business</h3>
+                <p class="text-sm text-gray-600">Including New Logo/New Project</p>
+            </div>
 
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">New Logo Number</h3>
+                <p class="text-sm text-gray-600">Number of total new Logo business Closed Won</p>
+            </div>
+
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Sales Process</h3>
+                <p class="text-sm text-gray-600">Conduct sales process – Defined by weekly scoring sheet used during weekly coaching calls.</p>
+            </div>
+
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">New Opp Number</h3>
+                <p class="text-sm text-gray-600">Number of total new opportunities generated for New Business</p>
+            </div>
+
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">New Opp Amount</h3>
+                <p class="text-sm text-gray-600">Amount ($) of total new opportunities generated for New Business</p>
+            </div>
+
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">QBR SMART Goals</h3>
+                <p class="text-sm text-gray-600">Tracking of QBR Smart goals / action – Defined by SMART goals measurable output.</p>
+            </div>
+
+            <div class="cell bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center min-h-[140px] border border-blue-200 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">ANI Goal</h3>
+                <p class="text-sm text-gray-600">Tracking & achieving Ani’s Yearly Goals – Defined by Ani’s FY25 goal sheet.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
